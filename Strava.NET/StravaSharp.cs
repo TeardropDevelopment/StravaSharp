@@ -4,9 +4,9 @@
     {
         #region Singleton
 
-        private StravaSharp? _instance = null;
+        private static StravaSharp? _instance = null;
 
-        public StravaSharp Instance { 
+        public static StravaSharp Instance { 
             get {
                 if(_instance == null)
                 {
@@ -33,7 +33,8 @@
 
         public object GetActivityById(long id, bool include_all_efforts)
         {
-            return GET($"/activities/{id}?include_all_efforts={include_all_efforts}");
+            Console.WriteLine(GET($"/activities/{id}?include_all_efforts={include_all_efforts}"));
+            return "";
         }
 
         public object GetCommentsByActivityId(long id, int page = 1, int per_page = 30)
