@@ -10,7 +10,7 @@ namespace StravaSharp
     {
         static void Main(string[] args)
         {
-            
+            StravaSharp.Instance.CreateActivity(new Activity { Distance = 1234 });
         }
     }
 }
