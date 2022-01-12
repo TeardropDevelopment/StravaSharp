@@ -2,6 +2,19 @@
 {
     public interface IStravaAPI
     {
+
+        #region Protocol
+
+        string Protocol { get; set; }
+
+        #endregion
+
+        #region OAuth2.0
+
+        bool OAuth();
+
+        #endregion
+
         #region Activity
 
         /// <summary>

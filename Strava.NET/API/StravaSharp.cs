@@ -1,26 +1,55 @@
-﻿namespace StravaSharp
+﻿using StravaSharp.API;
+using StravaSharp.API.Authentication;
+using StravaSharp.Client;
+using StravaSharp.Model;
+
+namespace StravaSharp
 {
-    public class StravaSharp : API, IStravaAPI
+    public class StravaSharp : StravaAPI, IStravaAPI
     {
-        #region Singleton
 
-        private static StravaSharp? _instance = null;
+        #region properties
 
-        public static StravaSharp Instance { 
-            get {
-                if(_instance == null)
-                {
-                    _instance = new StravaSharp();
-                } 
-                return _instance;
-            }
-        }
+        private string protocol = string.Empty;
+        public string Protocol { get => protocol; set => protocol = value; }
+
+        #endregion
+
+        #region client
+
+        private AppClient client;
+
+        #endregion
+
+        #region Access keys
+
+        private string? accessKey = string.Empty;
+        private string? refreshKey = string.Empty;
 
         #endregion
 
         #region ctor
 
-        protected StravaSharp() : base("https://www.strava.com/api/v3") { }
+        public Guid Id { get; private set; }
+        public StravaSharp(Guid id, AppClient client) : base("https://www.strava.com/api/v3") 
+        {
+            this.client = client;
+            Id = id;
+        }
+
+        #endregion
+
+        #region OAuth2.0
+
+        public bool OAuth()
+        {
+            OAuth oAuth = new OAuth();
+            string? code = oAuth.Authenticate(client.ClientId, Scope.Full);
+
+            // Get real accessKey and refreshKey
+
+            return true;
+        }
 
         #endregion
 
@@ -28,7 +57,8 @@
 
         public object CreateActivity(Activity activity)
         {
-            throw new NotImplementedException();
+            Console.WriteLine(accessKey);
+            return activity;
         }
 
         public object GetActivityById(long id, bool include_all_efforts)

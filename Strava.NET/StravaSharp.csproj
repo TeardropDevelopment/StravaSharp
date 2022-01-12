@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Strava.NET" Version="3.4.4" />
   </ItemGroup>
 
 </Project>
