@@ -2,10 +2,6 @@
 {
     public class Activity
     {
-        static void Main(string[] args)
-        {
-
-        }
 
         /// <summary>
         /// The name of the activity.

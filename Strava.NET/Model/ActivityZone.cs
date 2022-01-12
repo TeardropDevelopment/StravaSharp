@@ -17,7 +17,7 @@ namespace StravaSharp
 		/// An instance of <a href="#api-models-#/TimedZoneDistribution">#/TimedZoneDistribution</a>.
 		///</summary>
 		[JsonProperty("distribution_buckets")]
-		public #/TimedZoneDistribution DistributionBuckets { get; set; }
+		public TimedZoneDistribution DistributionBuckets { get; set; }
 
 		///<summary>
 		/// May take one of the following values: <code>heartrate</code>, <code>power</code>

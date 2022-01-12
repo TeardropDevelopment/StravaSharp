@@ -1,19 +1,42 @@
-﻿using System.Globalization;
+﻿using StravaSharp.API;
+using System.Globalization;
 
 namespace StravaSharp
 {
-    public class API
+    public class StravaAPI : IApi
     {
         //Variables
         protected readonly bool UsesComma = false;
         protected readonly string baseURL;
         protected HttpClient httpClient = new HttpClient();
 
-        protected API(string base_url)
+        protected StravaAPI(string base_url)
         {
             baseURL = base_url;
             if (CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator.Equals(","))
                 UsesComma = true;
+        }
+
+        public string BaseUrl { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public Task<object> HttpDeleteAsync(string url_parameters, StringContent string_content)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> HttpGetAsync(string url_parameters, StringContent string_content)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> HttpPostAsync(string url_parameters, StringContent string_content)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<object> HttpPutAsync(string url_parameters, StringContent string_content)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>

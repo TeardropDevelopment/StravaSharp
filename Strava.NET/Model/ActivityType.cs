@@ -5,7 +5,8 @@ namespace StravaSharp
 	///<summary>
 	/// An enumeration of the types an activity may have.
 	///</summary>
-	public class ActivityType
+	public enum ActivityType
 	{
-		}
+		Run
+	}
 }
