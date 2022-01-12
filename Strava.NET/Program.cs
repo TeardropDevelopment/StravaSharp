@@ -18,7 +18,7 @@ namespace StravaSharp
         {
 
             IStravaAPI stravaAPI = StravaFactory.GetApiInstance(new AppClient(60628, "820e2e72db310629e037d32edbbe3b7d894395d1"));
-            stravaAPI.OAuth();
+            stravaAPI.OAuth(Scope.Full);
 
             stravaAPI.CreateActivity(new Activity { Description = "Moin", Name = "API Test #1", Distance = 1, ElapsedTime = 10, Type = ActivityType.Run, StartDateLocal = DateTime.Now });
 

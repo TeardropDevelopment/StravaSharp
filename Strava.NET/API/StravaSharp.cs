@@ -41,10 +41,10 @@ namespace StravaSharp
 
         #region OAuth2.0
 
-        public bool OAuth()
+        public bool OAuth(Scope scope, int port = 5000)
         {
             OAuth oAuth = new OAuth();
-            string? code = oAuth.Authenticate(client.ClientId, Scope.Full);
+            string? code = oAuth.Authenticate(client.ClientId, scope, port);
 
             // Get real accessKey and refreshKey
 

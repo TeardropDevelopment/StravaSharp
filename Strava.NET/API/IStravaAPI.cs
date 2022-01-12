@@ -1,4 +1,6 @@
-﻿namespace StravaSharp
+﻿using StravaSharp.API.Authentication;
+
+namespace StravaSharp
 {
     public interface IStravaAPI
     {
@@ -11,7 +13,7 @@
 
         #region OAuth2.0
 
-        bool OAuth();
+        bool OAuth(Scope scope, int port = 5000);
 
         #endregion
 
